@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Web Cuaca (Celsius + UI Improved)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <div class="header">
+        <div>
+          <div class="title">Web Cuaca (Celsius)</div>
+          <div class="subtitle">Autocomplete, deteksi lokasi, icon cuaca, riwayat, dark mode</div>
+        </div>
+        <div>
+          <label style="display:flex;gap:8px;align-items:center">
+            <input id="darkToggle" type="checkbox" /> <span class="small">Dark</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="controls">
+        <div class="search">
+          <input id="city" type="search" placeholder="Ketik nama kota. Contoh: Jakarta, Bandung" autocomplete="off" aria-label="Kota">
+          <div id="suggestions" class="suggestions" style="display:none"></div>
+        </div>
+        <button id="geoBtn" class="btn" title="Gunakan lokasi saya">📍</button>
+        <button id="searchBtn" class="btn">Cari</button>
+        <button id="clearBtn" class="btn warn">Hapus</button>
+      </div>
+
+      <div class="grid">
+        <div>
+          <div id="output" class="small">Hasil akan muncul di sini.</div>
+          <div id="history" class="history small" style="margin-top:12px">Belum ada riwayat</div>
+        </div>
+
+        <div>
+          <div class="small">Peta lokasi</div>
+          <iframe id="map" src="about:blank" loading="lazy" referrerpolicy="no-referrer" class="mapframe"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
